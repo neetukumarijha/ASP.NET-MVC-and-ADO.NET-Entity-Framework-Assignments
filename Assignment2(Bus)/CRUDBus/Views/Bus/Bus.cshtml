@@ -1,0 +1,54 @@
+﻿@model CRUDBus.context.CRUDBus.Models.tbl_Bus
+@{
+    ViewBag.Title = "Bus";
+}
+
+<h2>Bus</h2>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+
+<h2>Bus</h2>
+@using (Html.BeginForm("AddBus", "Bus", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+
+            <label>BusID</label>
+            @Html.HiddenFor(x => x.BusID)
+            @Html.ValidationMessageFor(x => x.BusID, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.BusID, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Boarding Point</label>
+            @Html.ValidationMessageFor(x => x.BoardingPoint, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.BoardingPoint, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Travel Date</label>
+            @Html.ValidationMessageFor(x => x.Traveldate, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Traveldate, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Amount</label>
+            @Html.ValidationMessageFor(x => x.Amount, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>rating</label>
+            @Html.ValidationMessageFor(x => x.Rating, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Rating, new { @class = "form-control" })
+        </div>
+        
+        <div class="form-group">
+            <button type="Submit" class="btn btn-primary">Submit</button>
+            <button type="Reset" class="btn btn-danger">cancel</button>
+        </div>
+
+
+    </div>
+}
+
+
